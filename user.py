@@ -25,7 +25,9 @@ class User:
         SQL = "SELECT * FROM user where username = ?"
         con = sqlite3.connect(db_name)
         q = con.execute(SQL, [username])
-        data = q.fetchone
+        data = q.fetchone()
+        if not data:
+            return None
         return User(*data)
     
     @staticmethod
