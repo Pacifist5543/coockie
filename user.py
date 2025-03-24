@@ -46,4 +46,3 @@ class User:
         con = sqlite3.connect(db_name)
         con.execute(SQL, [username, password_hash])
         con.commit()
-        
